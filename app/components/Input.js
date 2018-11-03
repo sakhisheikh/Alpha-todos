@@ -10,9 +10,9 @@ const Input = ({ inputValue, onChangeText, onDone }) => (
     style={styles.input}
     placeholderTextColor={inputPlaceholder}
     placeholder="Type here your to do"
-    multiline={true}
+    multiline={false}
     autoCapitalize="sentences"
-    autoCorrect={false}
+    autoCorrect={true}
     blurOnSubmit={true}
     underlineColorAndroid="transparent"
     selectionColor={'white'}
@@ -31,4 +31,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default Input
+export default Input;
