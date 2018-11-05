@@ -15,6 +15,7 @@ import {
   circleActive,
   deleteIconColor
 } from '../utils/Colors';
+import EmojiText from '../utils/EmojiText';
 
 const { height, width } = Dimensions.get('window');
 
@@ -28,16 +29,16 @@ const List = ({ id, text, deleteTodo, isCompleted, toggleTodo }) => {
               circleInactive : circleActive
           }]}></View>
         </TouchableOpacity>
-        <Text style={[styles.text, isCompleted ? {
+        <EmojiText style={[styles.text, isCompleted ? {
           color: itemListTextStrike,
-          textDecorationLine: 'line-through'
+          textDecorationLine: 'line-through',
         } : { color: itemListText }]}>
           {text}
-        </Text>
+        </EmojiText>
       </View>
       {isCompleted && (
         <View style={styles.button}>
-          <TouchableOpacity onPress={deleteTodo(id)}>
+          <TouchableOpacity onPressOut={deleteTodo(id)}>
             <MaterialIcons
               name="delete-forever"
               size={24}
@@ -89,8 +90,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontWeight: '500',
-    fontSize: 16,
-    marginVertical: 5
+    fontSize: 15,
   },
   button: {
     marginRight: 10,

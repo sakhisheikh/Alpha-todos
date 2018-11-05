@@ -178,17 +178,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   scrollable: {
+    paddingVertical: 20,
     marginTop: 15,
-  },
-  textView: {
-    padding: 5,
-    fontWeight: 'bold',
-    color: 'wheat',
-    fontSize: 35,
-    ...Platform.select({
-      ios: { fontFamily: 'AvenirNext-Bold' },
-      android: { fontFamily: 'Roboto' }
-    })
   },
 });
 
